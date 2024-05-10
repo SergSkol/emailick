@@ -1,64 +1,69 @@
-import axios from 'axios';
-import { getBooksAction, createBookAction, removeBookAction } from '../redux/books/books';
+// import axios from 'axios';
+import {
+  MailinatorClient,
+  GetInboxRequest,
+  // GetMessageRequest,
+} from 'mailinator-client';
+import { getMessagesAction } from '../redux/messages/messages';
 
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Jw892Ayr6mc3caYJtp9R';
+// const baseUrl = 'https://mailinator.com/api/v2/domains/';
+const domain = 'team875296.testinator.com';
+const inbox = 'test3';
+const token = process.env.REACT_APP_API_TOKEN;
 
-const fillBooksArray = (data) => {
-  const books = [];
-  const itemNames = Object.keys(data);
-  itemNames.forEach((id) => {
-    const itemContent = data[id];
-    const { title, author, category } = itemContent[0];
-    const book = {
-      id, title, author, category,
-    };
-    books.push(book);
-  });
-  return books;
+console.log(token);
+
+// const headers = new Headers();
+// headers.append('Content-Type', 'application/json');
+// headers.append('Accept', 'application/json');
+// headers.append('Origin', 'http://localhost:3000');
+// headers.append('Authorization', token);
+
+// const url = `${baseUrl}${domain}/inboxes/${inbox}`;
+
+// const fillMessagesArray = (data) => {
+//   const messages = [];
+//   const itemNames = Object.keys(data);
+//   itemNames.forEach((id) => {
+//     const itemContent = data[id];
+//     const { subject, from } = itemContent[0];
+//     const message = {
+//       id, subject, from,
+//     };
+//     messages.push(message);
+//   });
+//   return messages;
+// };
+
+const getMessagesFromAPI = () => async (dispatch) => {
+  // const sendRequest = async () => {
+  //   await axios.get(`${url}/messages`, {
+  //     mode: 'no-cors',
+  //     credentials: 'include',
+  //     method: 'GET',
+  //     headers,
+  //   })
+  //     .then((response) => {
+  //       const data = response.data || null;
+
+  //       console.log(data);
+  //       const messages = fillMessagesArray(data);
+  //       dispatch(getMessagesAction(messages));
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  // };
+  // await sendRequest();
+
+  const mailinatorClient = new MailinatorClient(token);
+  const mailinatorInbox = await mailinatorClient.request(new GetInboxRequest(domain, inbox));
+  if (mailinatorInbox.result) {
+    const messages = mailinatorInbox.result.msgs;
+
+    console.log(messages);
+    dispatch(getMessagesAction(messages));
+  }
 };
 
-const getFromAPI = () => async (dispatch) => {
-  const sendRequest = async () => {
-    await axios.get(`${url}/books`)
-      .then((response) => {
-        const data = response.data || null;
-        const books = fillBooksArray(data);
-        dispatch(getBooksAction(books));
-      })
-      .catch(() => {
-      });
-  };
-  await sendRequest();
-};
-
-const postToAPI = (book) => async (dispatch) => {
-  const sendRequest = async () => {
-    await axios.post(`${url}/books`,
-      {
-        item_id: book.id,
-        title: book.title,
-        author: book.author,
-        category: book.category,
-      })
-      .then(() => {
-        dispatch(createBookAction(book));
-      })
-      .catch(() => {
-      });
-  };
-  await sendRequest();
-};
-
-const deleteFromAPI = (id) => async (dispatch) => {
-  const sendRequest = async () => {
-    await axios.delete(`${url}/books/${id}`)
-      .then(() => {
-        dispatch(removeBookAction(id));
-      })
-      .catch(() => {
-      });
-  };
-  await sendRequest();
-};
-
-export { getFromAPI, postToAPI, deleteFromAPI };
+export default getMessagesFromAPI;

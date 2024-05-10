@@ -5,7 +5,7 @@ import CategoriesList from './CategoriesList';
 
 const Categories = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.book);
+  const books = useSelector((state) => state.message);
 
   useEffect(() => {
     dispatch(checkStatusAction(books));

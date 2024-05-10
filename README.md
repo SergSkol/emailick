@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><b>Book Store</b></h1>
+  <h1><b>Email reader</b></h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -27,12 +27,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Book Store <a name="about-project"></a>
+# 📖 Email reader <a name="about-project"></a>
 
-**Book Store**  is a website that allows users to:
-- Display a list of books.
-- Add a book.
-- Remove a selected book.
+**Email reader**  is a website that allows users to:
+- Display a list of email.
 
 # 👁‍🗨 Preview
 
@@ -74,14 +72,12 @@ Placeholder
 
 ### Key Features <a name="key-features"></a>
 
-- **Display a list of books**
-- **Add a book**
-- **Remove a selected book**
+- **Display a list of emails**
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [Live Demo on Pages](https://sergskol.github.io/bookstore/public/)
+- [Live Demo on Pages](https://sergskol.github.io/emailick/public/)
 
 <!-- GETTING STARTED -->
 
@@ -107,7 +103,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/SergSkol/bookstore.git
+  git clone https://github.com/SergSkol/emailick.git
 ```
 
 ### Install <a name="install"></a>
@@ -115,7 +111,7 @@ Clone this repository to your desired folder:
 Install all the dependencys required for the website, by using the command below
 
 ```sh
-  cd bookstore
+  cd emailick
   npm install
 ```
 
@@ -149,16 +145,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 ## Learn More <a name="learn-more"></a>
 
@@ -198,7 +184,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 👤 **Sergiy Shkolnik**
 - GitHub: [@SergSkol](https://github.com/SergSkol)
 - Twitter: [@sps676](https://twitter.com/sps676)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sergiy-shkolnik-7801a53/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sergskol/)
 
 <!-- FUTURE FEATURES -->
 
@@ -233,4 +219,4 @@ I would like to thank:
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [GNU](./LICENSE) licensed.
