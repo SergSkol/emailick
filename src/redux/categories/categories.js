@@ -1,22 +1,15 @@
 const initialState = [];
 
 // Actions
-const STATUS = 'bookstore/categories/STATUS';
+const STATUS = 'categories/STATUS';
 
-const fillCategoriesArray = (books) => {
-  // const categories = [];
-  // books.forEach((book) => {
-  //   if (!categories.includes(book.category)) {
-  //     categories.push(book.category);
-  //   }
-  // });
-
-  const categories = books.reduce((acc, book) => {
-    const categoryIndex = acc.findIndex((item) => item.category === book.category);
+const fillCategoriesArray = (messages) => {
+  const categories = messages.reduce((acc, message) => {
+    const categoryIndex = acc.findIndex((item) => item.category === message.category);
     if (categoryIndex !== -1) {
       acc[categoryIndex].count += 1;
     } else {
-      acc.push({ category: book.category, count: 1 });
+      acc.push({ category: message.category, count: 1 });
     }
     return acc;
   }, []);
@@ -27,15 +20,15 @@ const fillCategoriesArray = (books) => {
 const categoriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case STATUS:
-      return fillCategoriesArray(action.books);
+      return fillCategoriesArray(action.messages);
     default:
       return state;
   }
 };
 
 // Action Creator
-export const checkStatusAction = (books) => (
-  { type: STATUS, books }
+export const checkStatusAction = (messages) => (
+  { type: STATUS, messages }
 );
 
 export default categoriesReducer;
