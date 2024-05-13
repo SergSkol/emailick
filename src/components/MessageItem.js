@@ -1,10 +1,10 @@
 import React from 'react';
 // import { useDispatch } from 'react-redux';
 
-const MessageItem = (book) => {
+const MessageItem = (message) => {
   const {
     id, subject, from,
-  } = book;
+  } = message;
 
   // const dispatch = useDispatch();
 

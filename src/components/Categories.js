@@ -5,10 +5,10 @@ import CategoriesList from './CategoriesList';
 
 const Categories = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.message);
+  const messages = useSelector((state) => state.message);
 
   useEffect(() => {
-    dispatch(checkStatusAction(books));
+    dispatch(checkStatusAction(messages));
   }, [dispatch]);
 
   return (

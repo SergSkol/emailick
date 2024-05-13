@@ -9,7 +9,7 @@ const VercelToolbar = () => {
 
   return (
     <div className="container">
-      <span className="bookTitle">
+      <span className="messageTitle">
         Powered by
         {' '}
         <a href="http://vercel.com">Vercel</a>

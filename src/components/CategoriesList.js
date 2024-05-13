@@ -8,7 +8,7 @@ const CategoriesList = () => {
     <ul className="categoriesList">
       {categories.map((item) => (
         <li key={item.category}>
-          <h4 className="bookCategory">
+          <h4 className="messageCategory">
             {item.category}
             {' ('}
             {item.count}

@@ -3,17 +3,16 @@ import { useSelector } from 'react-redux';
 import MessageItem from './MessageItem';
 
 const MessageList = () => {
-  const books = useSelector((state) => state.book) || [];
+  const messages = useSelector((state) => state.message) || [];
 
   return (
     <ul className="messageList">
-      {books.map((book) => (
-        <li key={book.id}>
+      {messages.map((message) => (
+        <li key={message.id}>
           <MessageItem
-            id={book.id}
-            title={book.title}
-            author={book.author}
-            category={book.category}
+            id={message.id}
+            subject={message.subject}
+            from={message.from}
           />
         </li>
       ))}
