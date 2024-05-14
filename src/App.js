@@ -7,7 +7,7 @@ const App = () => (
   <BrowserRouter>
     <Navbar />
     <Routes>
-      <Route path="/" element={<Messages />} />
+      <Route path="/messages" element={<Messages />} />
       <Route path="*" element={<p>Path is not resolved</p>} />
     </Routes>
   </BrowserRouter>
