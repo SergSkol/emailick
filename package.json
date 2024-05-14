@@ -2,14 +2,18 @@
   "name": "emailick",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.5.2",
-    "@vercel/flags": "^2.3.0",
-    "@vercel/speed-insights": "^1.0.10",
-    "@vercel/toolbar": "^0.1.14",
+    "axios": "^1.6.8",
     "mailinator-client": "^1.0.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -19,11 +23,17 @@
     "typed-rest-client": "^1.8.11",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/eslint-parser": "^7.24.5",
+    "@babel/plugin-syntax-jsx": "^7.24.1",
+    "@babel/preset-react": "^7.24.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.2"
   },
   "eslintConfig": {
     "extends": [

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import MessageItem from './MessageItem';
 
 const MessageList = () => {
-  const messages = useSelector((state) => state.message) || [];
+  const messages = useSelector((state) => state.message);
 
   return (
     <ul className="messageList">
