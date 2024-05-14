@@ -5,7 +5,7 @@ const Navbar = () => (
   <nav className="navBar">
     <h1>EMAIL</h1>
     <ul className="navMenu">
-      <li><Link to="/" className="navItem">MESSAGES</Link></li>
+      <li><Link to="/messages" className="navItem">MESSAGES</Link></li>
     </ul>
     <button className="iconButton" type="button">
       <span className="materialIcons primaryColor">PROFILE</span>
