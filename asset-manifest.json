@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/emailick/static/css/main.18e17e22.css",
+    "main.js": "/emailick/static/js/main.8662bcc5.js",
+    "index.html": "/emailick/index.html",
+    "main.18e17e22.css.map": "/emailick/static/css/main.18e17e22.css.map",
+    "main.8662bcc5.js.map": "/emailick/static/js/main.8662bcc5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18e17e22.css",
+    "static/js/main.8662bcc5.js"
+  ]
+}
