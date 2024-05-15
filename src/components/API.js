@@ -10,11 +10,11 @@ const domain = process.env.REACT_APP_API_DOMAIN;
 const inbox = process.env.REACT_APP_API_INBOX;
 const token = process.env.REACT_APP_API_TOKEN;
 
-const mockMessages = [{
-  id: 'mock123',
-  from: 'tester',
-  subject: domain + inbox + token,
-}];
+// const mockMessages = [{
+//   id: 'mock123',
+//   from: 'tester',
+//   subject: inbox + domain + token[0],
+// }];
 
 const headers = new Headers();
 headers.append('Content-Type', 'application/json');
@@ -22,7 +22,8 @@ headers.append('Accept', 'application/json');
 headers.append('Origin', 'http://localhost:3000');
 headers.append('Authorization', token);
 
-const baseUrl = 'https://mailinator.com/api/v2/domains/';
+const baseUrl = '/api/v2/domains/';
+// const baseUrl = 'https://mailinator.com/api/v2/domains/';
 const url = `${baseUrl}${domain}/inboxes/${inbox}`;
 
 const fillMessagesArray = (data) => {
@@ -41,11 +42,17 @@ const fillMessagesArray = (data) => {
 
 const sendRequest = async (dispatch) => {
   await axios.get(`${url}/messages`, {
+    mode: 'cors',
+    credentials: 'include',
+    method: 'GET',
     headers,
   })
     .then((response) => {
       const data = response.data || null;
       const messages = fillMessagesArray(data);
+
+      console.log(messages[0]);
+
       dispatch(getMessagesAction(messages));
     })
     .catch(() => {
@@ -67,7 +74,7 @@ const getMessagesFromAPI = () => async (dispatch) => {
   //   dispatch(getMessagesAction(messages));
   // }
 
-  dispatch(getMessagesAction(mockMessages));
+  // dispatch(getMessagesAction(mockMessages));
 };
 
 export default getMessagesFromAPI;
